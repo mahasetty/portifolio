@@ -1,0 +1,35 @@
+import random # To import the random module
+#Descritions of options for user to enter
+print("In the following input box enter your Selection \n Press 1 for BMI Calculator Program \n Press 2 for Greetings Message Program \n Press 3 for Gussing Game Program")
+programToRun=input() #Gather program selection Input from user
+programToRun=int(programToRun) #convert input to Integer 
+if programToRun == 1: #if the selection is 1 the following block (BMI Calculator)will be executed
+ #condition 1 Start
+  height=int(input('Enter Height in meters:')) #gather height input from user as integer and store it in height variable
+  weight=int(input('Enter Weight in kg:')) #gather weight input from user as integer and store it in weight variable
+  bmi=weight/(height**2) # perform arthmetic operation on the variable to calculate bmi
+  print("Calculated BMI is : "+str(bmi)) #Display bmi to the user
+ #condition 1 end
+
+if programToRun == 2: #if the selection is 2 the following block (Greeting Message prorgram)will be executed
+  #condition 2 start
+  userName=input('Enter your Name :') # Gather input from user and store it as string in userName Variable
+  print("Hello "+userName+", thanks for testing our program") #Display Greeting concatinating userName Variable
+  #condition 2 end
+if programToRun ==3 : #if the selection is 3 the following block (Guessing Number Program)will be executed
+  #condition 3 start
+  randomNum=random.randint(1,100) # get random number range between 1 to 100
+  userGuessNum = int(input('Enter your guessed Number between 1 to 100:')) #Gather user input as integer and store it in userGuessNum
+  while True : #while loop that runs infinetly until a break statement
+    if randomNum == userGuessNum : #Condition to check if the Computer Genrated Number matches with user guess
+      print("Congratulations ! you guessed it Correctly. Game Over") #Congrats message
+      break # break the loop
+    if randomNum < userGuessNum : #Condition to check if the Computer Genrated Number is lower than user guess
+      print("Err Your Guessed Number is higher than my Number") # Display user Hint 
+   
+    
+    if randomNum > userGuessNum : #Condition to check if the Computer Genrated Number is higher than user guess
+      print("ErrnYour Guessed Number is less than my Number")#Display User hint
+    userGuessNum = int(input('Try Again Enter your guessed Number between 1 to 100:')) #Gather user input as integer again and store it in userGuessNum
+  #condition 3 end
+    
